@@ -9,43 +9,51 @@ extern "C" {
 #endif
 /*
  * Class:     jnihybridstack_JNIStackImplementation
+ * Method:    init
+ * Signature: ()[B
+ */
+JNIEXPORT jbyteArray JNICALL Java_jnihybridstack_JNIStackImplementation_init
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     jnihybridstack_JNIStackImplementation
  * Method:    push
- * Signature: (I)V
+ * Signature: (I[B)V
  */
 JNIEXPORT void JNICALL Java_jnihybridstack_JNIStackImplementation_push
-  (JNIEnv *, jobject, jint);
+  (JNIEnv *, jobject, jint, jbyteArray);
 
 /*
  * Class:     jnihybridstack_JNIStackImplementation
  * Method:    peek
- * Signature: ()I
+ * Signature: ([B)I
  */
 JNIEXPORT jint JNICALL Java_jnihybridstack_JNIStackImplementation_peek
-  (JNIEnv *, jobject);
+  (JNIEnv *, jobject, jbyteArray);
 
 /*
  * Class:     jnihybridstack_JNIStackImplementation
  * Method:    isEmpty
- * Signature: ()Z
+ * Signature: ([B)Z
  */
 JNIEXPORT jboolean JNICALL Java_jnihybridstack_JNIStackImplementation_isEmpty
-  (JNIEnv *, jobject);
+  (JNIEnv *, jobject, jbyteArray);
 
 /*
  * Class:     jnihybridstack_JNIStackImplementation
- * Method:    show
- * Signature: ()V
+ * Method:    pop
+ * Signature: ([B)V
  */
-JNIEXPORT void JNICALL Java_jnihybridstack_JNIStackImplementation_show
-  (JNIEnv *, jobject);
+JNIEXPORT void JNICALL Java_jnihybridstack_JNIStackImplementation_pop
+  (JNIEnv *, jobject, jbyteArray);
 
 /*
  * Class:     jnihybridstack_JNIStackImplementation
- * Method:    remove
- * Signature: ()V
+ * Method:    cloneBuffer
+ * Signature: ([B)[B
  */
-JNIEXPORT void JNICALL Java_jnihybridstack_JNIStackImplementation_remove
-  (JNIEnv *, jobject);
+JNIEXPORT jbyteArray JNICALL Java_jnihybridstack_JNIStackImplementation_cloneBuffer
+  (JNIEnv *, jobject, jbyteArray);
 
 #ifdef __cplusplus
 }
